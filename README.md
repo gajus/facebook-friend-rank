@@ -2,6 +2,8 @@
 
 [ay-fb-friend-rank](https://github.com/anuary/ay-fb-friend-rank/) ([demonstration](https://dev.anuary.com/16caf079-791e-5067-8b4c-76bd40347e2b/)) is a PHP 5.3 class that can calculate who are the best user's friends. Data accuracy depends on the user activity and granted permissions. The only dependancy is [Facebook PHP SDK](https://github.com/facebook/php-sdk/).
 
+All the data is collected in two batched requests. Nonetheless, it takes time for Facebook to prepare this data (sometimes up to 5 seconds). Therefore, you are advised to cache the data once you have it and repeat the query only if user has approved more permissions.
+
 Follow the blog entry about the [Facebook Friend Rank Algorithm](http://anuary.com/43/facebook-friend-rank-algorithm) to find out about possible implementations.
 
 ## Criteria
@@ -29,6 +31,10 @@ The following steps are taken to calculate the user ranking:
 ## Weights
 
 By default every action is valued 1. Every criteria can be assigned an individual weight using `setCriteriaWeight([action name, see $criteria], [numeric value])` method.
+
+## Roadmap
+
+* There are many more permissions that can improve the friend-rank accuracy that the script doesn't utilise yet, eg. `user_hometown,friends_hometown,user_interests,friends_interests`.
 
 ## Alternatives
 
