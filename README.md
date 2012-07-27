@@ -1,4 +1,10 @@
-[ay-fb-friend-rank](https://github.com/anuary/ay-fb-friend-rank/) ([demonstration](https://dev.anuary.com/a67edf20-19c9-5d3e-b440-c94f91bc63fe/)) is a PHP 5.3 class that can calculate who are the best user's friends. Data accuracy depends on the user activity and granted permissions. The only dependancy is [Facebook PHP SDK](https://github.com/facebook/php-sdk/).
+# Facebook Friend Rank Algorithm
+
+[ay-fb-friend-rank](https://github.com/anuary/ay-fb-friend-rank/) ([demonstration](https://dev.anuary.com/16caf079-791e-5067-8b4c-76bd40347e2b/)) is a PHP 5.3 class that can calculate who are the best user's friends. Data accuracy depends on the user activity and granted permissions. The only dependancy is [Facebook PHP SDK](https://github.com/facebook/php-sdk/).
+
+Follow the blog entry about the [Facebook Friend Rank Algorithm](http://anuary.com/43/facebook-friend-rank-algorithm) to find out about possible implementations.
+
+## Criteria
 
 The following steps are taken to calculate the user ranking:
 
@@ -19,9 +25,23 @@ The following steps are taken to calculate the user ranking:
 4. Inbox. `read_mailbox` is required.
 	* Every profile is given `inbox_in_conversation` for participating in a mutual conversation with the user.
 	* `inbox_chat` score is given for every message in a *duologue*.
-	
+
+## Weights
+
 By default every action is valued 1. Every criteria can be assigned an individual weight using `setCriteriaWeight([action name, see $criteria], [numeric value])` method.
+
+## Alternatives
+
+### Facebook Developer Love
 
 This class will become redundant once Facebook makes `communication_rank` column publicly available.
 
 	SELECT uid2, communication_rank FROM friend where uid1 = me() ORDER BY communication_rank DESC LIMIT 10;
+
+### Ruby
+
+A similar attempt to calculate the friend index has been made by [Mike Jarema using Ruby](https://github.com/mikejarema/facebook-friend-rank).
+
+## License & Notes
+
+The BSD License - Copyright (c) 2012 [Gajus Kuizinas](http://anuary.com/gajus).
