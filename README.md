@@ -35,6 +35,7 @@ By default every action is valued 1. Every criteria can be assigned an individua
 ## Roadmap
 
 * There are many more permissions that can improve the friend-rank accuracy that the script doesn't utilise yet, eg. `user_hometown,friends_hometown,user_interests,friends_interests`.
+* As per Jeff Widman's thoughts on the EdgeRank (http://edgerank.net/), this script dramatically lacks Time Decay criteria. This is the next thing on the to-do-list.
 
 ## Alternatives
 
