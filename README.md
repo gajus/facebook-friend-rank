@@ -1,6 +1,6 @@
 # Facebook Friend Rank Algorithm
 
-[ay-fb-friend-rank](https://github.com/anuary/ay-fb-friend-rank/) ([demonstration](https://dev.anuary.com/16caf079-791e-5067-8b4c-76bd40347e2b/)) is a PHP 5.3 class that can calculate who are the best user's friends. Data accuracy depends on the user activity and granted permissions. The only dependancy is [Facebook PHP SDK](https://github.com/facebook/php-sdk/).
+[ay-fb-friend-rank](https://github.com/gajus/facebook-friend-rank/) ([demonstration](https://dev.anuary.com/16caf079-791e-5067-8b4c-76bd40347e2b/)) is a PHP 5.3 class that can calculate who are the best user's friends. Data accuracy depends on the user activity and granted permissions. The only dependancy is [Facebook PHP SDK](https://github.com/facebook/php-sdk/).
 
 All the data is collected in two batched requests. Nonetheless, it takes time for Facebook to prepare this data (sometimes up to 5 seconds). Therefore, you are advised to cache the data once you have it and repeat the query only if user has approved more permissions.
 
@@ -51,4 +51,4 @@ A similar attempt to calculate the friend index has been made by [Mike Jarema us
 
 ## License & Notes
 
-The BSD License - Copyright (c) 2012 [Gajus Kuizinas](http://anuary.com/gajus).
+The BSD License - Copyright (c) 2012 Gajus Kuizinas.
